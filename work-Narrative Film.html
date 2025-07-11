@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Karya - [Nama Karya Anda]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6E2828',
+                        secondary: '#F01414',
+                        accent: '#E78E2F',
+                        light: '#D3CC79',
+                        neutral: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Anda bisa menambahkan CSS khusus untuk halaman detail di sini jika diperlukan */
+        .detail-card {
+            background-color: #1c1c1c; /* Latar belakang kartu detail */
+            border: 1px solid #2a2a2a;
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm py-4 border-b border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                    <span class="text-white font-bold">CM</span>
+                </div>
+                <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-neutral hover:text-accent transition-colors">Beranda</a>
+                <a href="index.html#portfolio" class="text-accent hover:text-accent transition-colors">Karya</a> <a href="index.html#about" class="text-neutral hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-neutral hover:text-accent transition-colors">Pack Editing</a>
+                <a href="index.html#contact" class="text-neutral hover:text-accent transition-colors">Kontak</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-neutral">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-90 py-4 px-6 backdrop-blur-sm">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-neutral py-2 hover:text-accent transition-colors">Beranda</a>
+                <a href="index.html#portfolio" class="text-accent py-2 hover:text-accent transition-colors">Karya</a> <a href="index.html#about" class="text-neutral py-2 hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-neutral py-2 hover:text-accent transition-colors">Pack Editing</a>
+                <a href="index.html#contact" class="text-neutral py-2 hover:text-accent transition-colors">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="work-detail" class="py-20 bg-black relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto detail-card rounded-xl p-8 shadow-2xl">
+                <a href="index.html#portfolio" class="text-gray-400 hover:text-accent transition-colors mb-8 inline-block">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Portofolio
+                </a>
+
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Judul Karya Anda di Sini</h2>
+                <p class="text-gray-400 text-lg mb-8">Kategori: <span class="text-accent">Video Editing</span> | Klien: ABC Studio</p>
+
+                <div class="mb-8 rounded-lg overflow-hidden border border-gray-700 shadow-lg">
+                    <img src="image/Video-marketing.gif" alt="Gambar Detail Karya" class="w-full h-auto object-cover">
+                    
+                    </div>
+
+                <div class="text-gray-300 leading-relaxed mb-8">
+                    <p class="mb-4">
+                        Deskripsi mendalam tentang proyek ini. Jelaskan tantangan, tujuan, proses kreatif, dan hasil yang dicapai. Anda bisa menuliskan paragraf-paragraf panjang di sini.
+                    </p>
+                    <p class="mb-4">
+                        Pada proyek ini, kami berfokus pada [sebutkan detail spesifik, misalnya: penggunaan teknik color grading sinematik, desain motion graphics yang minimalis, atau penangkapan momen candid yang otentik]. Tools yang digunakan meliputi Adobe Premiere Pro, After Effects, dan DaVinci Resolve.
+                    </p>
+                    <p>
+                        Hasil akhirnya adalah [jelaskan dampak atau keberhasilan proyek, misalnya: peningkatan engagement brand sebesar X%, pujian dari klien, atau mencapai target audiens yang lebih luas].
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 text-accent">Keahlian yang Digunakan</h3>
+                        <ul class="list-disc list-inside text-gray-300">
+                            <li>Video Editing (Cut, Transisi, VFX)</li>
+                            <li>Color Grading</li>
+                            <li>Sound Design</li>
+                            <li>Motion Graphics</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 text-accent">Detail Proyek</h3>
+                        <ul class="text-gray-300">
+                            <li>Tanggal Selesai: 12 Mei 2024</li>
+                            <li>Durasi: 1:30 menit</li>
+                            <li>Platform: YouTube, Instagram</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="index.html#contact" class="btn-primary py-3 px-8 rounded-full font-bold text-white inline-flex items-center">
+                        Pesan Proyek Serupa <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black border-t border-gray-800">
+    <div class="container mx-auto px-6">
+        <div class="mb-6 md:mb-0 text-center"> <p class="text-gray-400">
+                    © 2025 CreativeMedia. Semua Hak Dilindungi.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

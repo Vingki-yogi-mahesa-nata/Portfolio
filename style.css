@@ -1,0 +1,276 @@
+/* portofolio/style.css */
+
+/* Global Styles dari index.html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%); /* Warna background utama */
+    color: #FFFFFF; /* Warna teks default */
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom Cursor CSS (dipindahkan dari index.html) */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #F01414; /* secondary color */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #F01414; /* secondary color */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    pointer-events: none;
+    transition: all 0.15s ease;
+    mix-blend-mode: difference;
+}
+
+/* Styles lainnya dari index.html (untuk konsistensi) */
+.hero-gradient {
+    background: linear-gradient(45deg, #6E2828 0%, #F01414 35%, #E78E2F 70%, #D3CC79 100%);
+}
+.btn-primary {
+    background: #F01414; /* Ini adalah warna merah terang */
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background: #E78E2F; /* Ini adalah warna aksen (oranye) saat hover */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(231, 142, 47, 0.3);
+}
+
+.skills-diagram {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(#F01414 90%, #2d2d2d 0);
+}
+.skills-diagram::after {
+    content: '90%';
+    position: absolute;
+    color: white;
+    font-weight: bold;
+}
+.progress-bar {
+    position: relative;
+    height: 8px;
+    background: #2d2d2d;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-fill {
+    position: absolute;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to right, #F01414, #E78E2F);
+}
+.portfolio-item {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(231, 142, 47, 0.3);
+}
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(110, 40, 40, 0.85); /* primary color dengan opasitas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+section {
+    padding: 80px 0;
+}
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 30%;
+    width: 40%;
+    height: 2px;
+    background: #F01414;
+    z-index: 1;
+}
+.process-step:last-child::after {
+    display: none;
+}
+.testimonial-card {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border: 1px solid #3a3a3a;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: all 0.5s ease;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+}
+.testimonial-card:hover {
+    transform: perspective(1000px) rotateY(-5deg);
+    box-shadow: 0 20px 40px -10px rgba(231, 142, 47, 0.3);
+}
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #F01414;
+}
+.timeline-dot {
+    position: absolute;
+    left: -11px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #F01414;
+    box-shadow: 0 0 0 4px rgba(240, 20, 20, 0.2);
+}
+.active-tab {
+    background: linear-gradient(45deg, #F01414, #E78E2F);
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(231, 142, 47, 0.3);
+    position: relative;
+    z-index: 10;
+}
+.gradient-text {
+    background: linear-gradient(45deg, #F01414, #E78E2F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Media Queries dari index.html */
+@media (max-width: 768px) {
+    section {
+        padding: 50px 0;
+    }
+    .process-step::after {
+        display: none;
+    }
+    .hero-content {
+        flex-direction: column;
+    }
+}
+
+/* Custom Animation for Floating Blob (dari editing-packs.html) */
+@keyframes floatEffect {
+    0% {
+        transform: translateY(0px) scale(1);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+.animated-blob {
+    animation: floatEffect 8s ease-in-out infinite;
+}
+
+/* Responsiveness untuk Pack Editing page (dipindahkan dari editing-packs.html) */
+@media (max-width: 767px) { /* Untuk layar di bawah md (768px) */
+    .text-4xl { font-size: 2.5rem; }
+    .text-xl { font-size: 1.15rem; }
+    .text-lg { font-size: 1rem; }
+    .px-6 { padding-left: 1rem; padding-right: 1rem; }
+}
+/* style.css (bagian paling bawah, setelah @keyframes floatEffect) */
+
+/* Custom Background Animations for Hero Section and Pack Editing Section */
+@keyframes blobFloat1 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.3; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25% { transform: translate(20px, -20px) scale(1.05); opacity: 0.35; border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%; }
+    50% { transform: translate(0, 0) scale(1); opacity: 0.3; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    75% { transform: translate(-20px, 20px) scale(0.95); opacity: 0.25; border-radius: 70% 30% 40% 60% / 70% 40% 60% 30%; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.3; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+@keyframes blobFloat2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.25; border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%; }
+    25% { transform: translate(-15px, 15px) scale(0.98); opacity: 0.28; border-radius: 70% 30% 30% 70% / 30% 70% 70% 30%; }
+    50% { transform: translate(0, 0) scale(1); opacity: 0.25; border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%; }
+    75% { transform: translate(15px, -15px) scale(1.02); opacity: 0.22; border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.25; border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%; }
+}
+
+@keyframes blobFloat3 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.2; border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+    25% { transform: translate(10px, 10px) scale(1.03); opacity: 0.23; border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%; }
+    50% { transform: translate(0, 0) scale(1); opacity: 0.2; border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+    75% { transform: translate(-10px, -10px) scale(0.97); opacity: 0.18; border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.2; border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+}
+
+/* BARU: Animasi tambahan untuk blob ke-4, mirip dengan lainnya */
+@keyframes blobFloat4 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.28; border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; }
+    25% { transform: translate(-25px, -10px) scale(1.01); opacity: 0.31; border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%; }
+    50% { transform: translate(0, 0) scale(1); opacity: 0.28; border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; }
+    75% { transform: translate(25px, 10px) scale(0.99); opacity: 0.25; border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.28; border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; }
+}
+
+
+.animate-blob-float-1 { animation: blobFloat1 12s infinite ease-in-out; }
+.animate-blob-float-2 { animation: blobFloat2 15s infinite ease-in-out; }
+.animate-blob-float-3 { animation: blobFloat3 10s infinite ease-in-out; }
+.animate-blob-float-4 { animation: blobFloat4 13s infinite ease-in-out; } /* BARU */
+
+/* Animasi tambahan untuk tombol download */
+.btn-download-hover i {
+    transition: transform 0.3s ease-in-out;
+}
+.btn-download-hover span {
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-zoom {
+    animation: zoomInOut 1.5s infinite alternate; /* 1.5 detik per siklus, berulang terus, animasi bolak-balik */
+}

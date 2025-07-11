@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Pembayaran - [Nama Anda]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6E2828',
+                        secondary: '#F01414',
+                        accent: '#E78E2F',
+                        light: '#D3CC79',
+                        neutral: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="relative overflow-x-hidden">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm py-4 border-b border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                    <span class="text-white font-bold">CM</span>
+                </div>
+                <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="text-neutral hover:text-accent transition-colors">Beranda</a>
+                <a href="index.html#portfolio" class="text-neutral hover:text-accent transition-colors">Karya</a>
+                <a href="index.html#about" class="text-neutral hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-neutral hover:text-accent transition-colors">Pack Editing</a> 
+                <a href="index.html#contact" class="text-neutral hover:text-accent transition-colors">Kontak</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-neutral">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-90 py-4 px-6 backdrop-blur-sm">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html#home" class="text-neutral py-2 hover:text-accent transition-colors">Beranda</a>
+                <a href="index.html#portfolio" class="text-neutral py-2 hover:text-accent transition-colors">Karya</a>
+                <a href="index.html#about" class="text-neutral py-2 hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-neutral py-2 hover:text-accent transition-colors">Pack Editing</a> 
+                <a href="index.html#contact" class="text-neutral py-2 hover:text-accent transition-colors">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen bg-black text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-xl p-6 md:p-10 border border-gray-700">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">Selesaikan Pembayaran</h2>
+                <p class="text-gray-400 text-center mb-8">Pilih metode pembayaran favorit Anda untuk menyelesaikan pembelian.</p>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-white">Ringkasan Pesanan:</h3>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span id="product-title" class="text-lg font-semibold text-white">Nama Produk</span>
+                            <span id="product-price" class="text-lg font-semibold text-accent">Harga</span>
+                        </div>
+                        <div class="text-gray-400 text-sm" id="product-category">Kategori</div>
+                        <hr class="border-gray-600 my-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-white">Total Pembayaran:</span>
+                            <span id="total-payment" class="text-2xl font-bold gradient-text">Rp X.XXX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-white">Pilih Metode Pembayaran:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="payment-option bg-gray-700 p-5 rounded-lg border border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors" data-method="qris">
+                            <div class="flex items-center space-x-4">
+                                <img src="image/payment-qris.png" alt="Logo QRIS" class="w-12 h-12 object-contain"> <span class="text-lg font-semibold text-white">QRIS</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-option bg-gray-700 p-5 rounded-lg border border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors" data-method="dana">
+                            <div class="flex items-center space-x-4">
+                                <img src="image/payment-dana.png" alt="Logo DANA" class="w-12 h-12 object-contain">
+                                <span class="text-lg font-semibold text-white">DANA</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-option bg-gray-700 p-5 rounded-lg border border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors" data-method="ovo">
+                            <div class="flex items-center space-x-4">
+                                <img src="image/payment-ovo.png" alt="Logo OVO" class="w-12 h-12 object-contain">
+                                <span class="text-lg font-semibold text-white">OVO</span>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-option bg-gray-700 p-5 rounded-lg border border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors" data-method="bca">
+                            <div class="flex items-center space-x-4">
+                                <img src="image/payment-bca.png" alt="Logo BCA" class="w-12 h-12 object-contain">
+                                <span class="text-lg font-semibold text-white">Transfer Bank BCA</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-option bg-gray-700 p-5 rounded-lg border border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors" data-method="mandiri">
+                            <div class="flex items-center space-x-4">
+                                <img src="image/payment-mandiri.png" alt="Logo Mandiri" class="w-12 h-12 object-contain">
+                                <span class="text-lg font-semibold text-white">Transfer Bank Mandiri</span>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-option bg-gray-700 p-5 rounded-lg border border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors md:col-span-2" data-method="credit-card">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-credit-card text-4xl text-blue-400"></i>
+                                <span class="text-lg font-semibold text-white">Kartu Kredit/Debit (via Payment Gateway)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment-instructions" class="hidden bg-gray-700 p-6 rounded-lg text-center mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-white" id="instruction-title">Instruksi Pembayaran</h3>
+                    <div id="instruction-content">
+                        </div>
+                    <button id="close-instructions" class="btn-secondary py-2 px-6 rounded-lg font-bold inline-flex items-center space-x-2 mt-6">
+                        <i class="fas fa-times"></i>
+                        <span>Tutup Instruksi</span>
+                    </button>
+                </div>
+
+                <div class="text-center mt-10">
+                    <p class="text-gray-400 text-sm">
+                        Harap perhatikan: Pembayaran akan diverifikasi secara manual. Setelah pembayaran berhasil, konfirmasi melalui kontak kami.
+                    </p>
+                    <a href="pack-detail.html" class="btn-secondary py-3 px-8 rounded-lg font-bold inline-flex items-center space-x-2 mt-6 transition-all duration-300">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Kembali ke Detail Pack</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 bg-black border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                        <span class="text-white font-bold">CM</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+                </div>
+                
+                <div class="mb-6 md:mb-0 text-center">
+                    <p class="text-gray-400">
+                        © 2025 CreativeMedia. Semua Hak Dilindungi.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>

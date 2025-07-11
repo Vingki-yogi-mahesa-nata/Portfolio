@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Detail Pack Editing - [Nama Anda]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6E2828',
+                        secondary: '#F01414',
+                        accent: '#E78E2F',
+                        light: '#D3CC79',
+                        neutral: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Tambahan CSS khusus jika perlu */
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm py-4 border-b border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                    <span class="text-white font-bold">CM</span>
+                </div>
+                <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="text-neutral hover:text-accent transition-colors">Beranda</a>
+                <a href="index.html#portfolio" class="text-neutral hover:text-accent transition-colors">Karya</a>
+                <a href="index.html#about" class="text-neutral hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-accent hover:text-accent transition-colors">Pack Editing</a> 
+                <a href="index.html#contact" class="text-neutral hover:text-accent transition-colors">Kontak</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-neutral">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-90 py-4 px-6 backdrop-blur-sm">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html#home" class="text-neutral py-2 hover:text-accent transition-colors">Beranda</a>
+                <a href="index.html#portfolio" class="text-neutral py-2 hover:text-accent transition-colors">Karya</a>
+                <a href="index.html#about" class="text-neutral py-2 hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-accent py-2 hover:text-accent transition-colors">Pack Editing</a> 
+                <a href="index.html#contact" class="text-neutral py-2 hover:text-accent transition-colors">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen bg-black text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10 border border-gray-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+                    <div id="pack-media-container" class="relative overflow-hidden rounded-lg">
+                        <img src="Brand Identity Design/stationery2_01.jpg" alt="Loading media" class="w-full h-auto object-cover">
+                    </div>
+
+                    <div>
+                        <h2 id="pack-title" class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Nama Pack</h2>
+                        <p id="pack-category-price" class="text-lg text-gray-400 mb-6">Kategori | Harga</p>
+                        
+                        <p id="pack-description" class="text-base text-gray-300 leading-relaxed mb-8">
+                            Deskripsi detail pack editing akan muncul di sini.
+                        </p>
+
+                        <div class="mb-8">
+                            <h3 class="text-xl font-semibold mb-3 text-white">Detail Tambahan:</h3>
+                            <ul id="pack-details-list" class="list-disc list-inside text-gray-300 space-y-1">
+                                </ul>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="text-xl font-semibold mb-3 text-white">Meliputi:</h3>
+                            <ul id="pack-contents-list" class="list-disc list-inside text-gray-300 space-y-1">
+                                </ul>
+                        </div>
+
+                       <a href="#" id="buy-pack-button"
+   class="btn-primary py-3 px-8 rounded-lg font-bold flex items-center justify-center space-x-2
+          transition-all duration-300 hover:scale-105 text-lg animate-pulse">
+    <i class="fas fa-shopping-cart"></i> <span>Beli Sekarang</span>
+</a>
+                        </a>
+
+                        <p class="text-sm text-gray-500 mt-4 text-center">
+                            Anda akan diarahkan ke halaman pembayaran aman.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="editing-packs.html" class="btn-secondary py-3 px-8 rounded-lg font-bold inline-flex items-center space-x-2 transition-all duration-300">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Kembali ke Pack Editing</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 bg-black border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                        <span class="text-white font-bold">CM</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+                </div>
+                
+                <div class="mb-6 md:mb-0 text-center">
+                    <p class="text-gray-400">
+                        © 2024 CreativeMedia. Semua Hak Dilindungi.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>

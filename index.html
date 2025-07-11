@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio vingki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6E2828',
+                        secondary: '#F01414',
+                        accent: '#E78E2F',
+                        light: '#D3CC79',
+                        neutral: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS kustom  */
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm py-4 border-b border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                    <span class="text-white font-bold">CM</span>
+                </div>
+                <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-neutral hover:text-accent transition-colors">Beranda</a>
+                <a href="#portfolio" class="text-neutral hover:text-accent transition-colors">Karya</a>
+                <a href="#about" class="text-neutral hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-neutral hover:text-accent transition-colors">Pack Editing</a> 
+                <a href="#contact" class="text-neutral hover:text-accent transition-colors">Kontak</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-neutral">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-90 py-4 px-6 backdrop-blur-sm">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-neutral py-2 hover:text-accent transition-colors">Beranda</a>
+                <a href="#portfolio" class="text-neutral py-2 hover:text-accent transition-colors">Karya</a>
+                <a href="#about" class="text-neutral py-2 hover:text-accent transition-colors">Tentang</a>
+                <a href="editing-packs.html" class="text-neutral py-2 hover:text-accent transition-colors">Pack Editing</a> 
+                <a href="#contact" class="text-neutral py-2 hover:text-accent transition-colors">Kontak</a>
+            </div>
+        </div>
+    </header>
+    
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+            <div class="absolute inset-0 flex justify-end items-center">
+                <div class="w-1/2 bg-gradient-to-r from-accent to-secondary opacity-10 transform skew-x-12"></div>
+            </div>
+            <div class="absolute inset-0 hero-gradient opacity-15"></div>
+            <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-20"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-30 py-20">
+            <div class="flex flex-col md:flex-row items-center hero-content">
+                <div class="md:w-1/2 mb-16 md:mb-0">
+                    <p class="text-accent mb-2 font-semibold tracking-wider"><i class="fas fa-circle animate-pulse mr-2"></i>WELCOME TO MY PORTFOLIO</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Menciptakan <span class="gradient-text block mt-2">Visual Memukau</span></h1>
+                    <p class="text-gray-300 mb-8 text-lg max-w-xl">
+                        Saya adalah seorang visioner di balik layar, spesialis dalam menghidupkan ide menjadi cerita visual yang berdampak, dari editing video yang dinamis hingga desain grafis yang memikat.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#portfolio" class="btn-primary py-3 px-8 rounded-full font-bold text-white inline-flex items-center">
+                            Lihat Karya <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="py-3 px-8 rounded-full font-bold border-2 border-accent text-white inline-flex items-center hover:bg-accent hover:border-accent transition-colors">
+                            Hubungi Saya
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 flex justify-center relative">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 rounded-full border-4 border-light opacity-50 animate-pulse"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border-4 border-secondary opacity-50 animate-ping"></div>
+                        <div class="relative w-80 h-80 md:w-96 md:h-96 rounded-xl overflow-hidden transform rotate-3 border-8 border-white shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1511376777868-611b54f68947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Professional Creative" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#portfolio" class="p-3 rounded-full border-2 border-white text-white">
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Karya-karya <span class="gradient-text">Kreatif</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Eksplorasi kumpulan karya terbaik yang telah saya ciptakan untuk berbagai klien dan proyek
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button class="portfolio-tab px-6 py-3 rounded-full border-2 border-secondary font-semibold transition-all active-tab" data-category="all">
+                    Semua Karya
+                </button>
+                <button class="portfolio-tab px-6 py-3 rounded-full border-2 border-secondary font-semibold transition-all" data-category="video-editing">
+                    Campaign Brand
+                </button>
+                <button class="portfolio-tab px-6 py-3 rounded-full border-2 border-secondary font-semibold transition-all" data-category="graphic-design">
+                    Graphic Design
+                </button>
+                <button class="portfolio-tab px-6 py-3 rounded-full border-2 border-secondary font-semibold transition-all" data-category="photography">
+                    Photography
+                </button>
+                <button class="portfolio-tab px-6 py-3 rounded-full border-2 border-secondary font-semibold transition-all" data-category="videography">
+                    Narrative Film
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-item video-editing" data-category="video-editing">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif"
+                             alt="Video Editing Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Video Campaign Brand</h3>
+                            <p class="text-gray-300 mb-4">Iklan Digital</p>
+                            <a href="work design detail.html" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item graphic-design" data-category="graphic-design">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img  src="image/Video-marketing.gif" 
+                             alt="Graphic Design Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Brand Identity Design</h3>
+                            <p class="text-gray-300 mb-4">Desain Logo & Branding</p>
+                            <a href="work- Campaign Brand-detail.html" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item photography" data-category="photography">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Photography Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Landscape Photography</h3>
+                            <p class="text-gray-300 mb-4">Nature Photography</p>
+                            <a href="work-detail.html?id=landscape-photo" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item videography" data-category="videography">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Videography Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Short Film Production</h3>
+                            <p class="text-gray-300 mb-4">Narrative Film</p>
+                            <a href="work-detail.html?id=short-film" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item video-editing" data-category="video-editing">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Video Editing Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Corporate Profile Video</h3>
+                            <p class="text-gray-300 mb-4">Company Profile</p>
+                            <a href="work-detail.html?id=corporate-video" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item graphic-design" data-category="graphic-design">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Graphic Design Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Digital Product UI Design</h3>
+                            <p class="text-gray-300 mb-4">UI/UX Design</p>
+                            <a href="work-detail.html?id=ui-design" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item photography" data-category="photography">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Photography Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Potret Model Profesional</h3>
+                            <p class="text-gray-300 mb-4">Fashion Photography</p>
+                            <a href="work-detail.html?id=model-portrait" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item videography" data-category="videography">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Videography Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Video Musik Indie Pop</h3>
+                            <p class="text-gray-300 mb-4">Music Video</p>
+                            <a href="work-detail.html?id=indie-music-video" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item video-editing" data-category="video-editing">
+                    <div class="relative rounded-xl overflow-hidden h-80">
+                        <img src="image/Video-marketing.gif" 
+                             alt="Video Editing Project" class="w-full h-full object-cover">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold mb-2">Video Tutorial Interaktif</h3>
+                            <p class="text-gray-300 mb-4">Online Course</p>
+                            <a href="work-detail.html?id=tutorial-video" class="btn-primary px-6 py-2 rounded-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#portfolio" class="btn-primary py-3 px-10 rounded-full font-bold inline-flex items-center text-white">
+                    Lihat Semua Karya <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-r from-primary to-accent bg-opacity-10 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5"></div>
+            <div class="pattern-dots pattern-gray-600 pattern-opacity-60 pattern-bg-transparent pattern-size-4 pattern-size-4"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Apa Kata <span class="text-secondary">Klien</span></h2>
+                <p class="text-gray-200 max-w-2xl mx-auto">
+                    Testimonial dari klien yang telah bekerja sama dengan saya
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white font-bold mr-4">
+                            RJ
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Randy Jaya</h4>
+                            <p class="text-light text-sm">CEO, BrandConnect</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 mb-4">
+                        "Kerja sama dengan tim kreatif sangat memuaskan. Video campaign yang dibuat memberikan hasil luar biasa untuk brand kami."
+                    </p>
+                    <div class="flex text-accent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white font-bold mr-4">
+                            SA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Sari Amanda</h4>
+                            <p class="text-light text-sm">Marketing Director, TechVision</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 mb-4">
+                        "Desain grafis yang dibuat tidak hanya indah tapi juga sesuai dengan tujuan bisnis kami. Hasilnya jauh melebihi ekspektasi."
+                    </p>
+                    <div class="flex text-accent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white font-bold mr-4">
+                            DW
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Diana Wulandari</h4>
+                            <p class="text-light text-sm">Event Manager, PrimeEvents</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 mb-4">
+                        "Dokumentasi event yang dibuat sangat profesional. Kami puas dengan hasil foto dan videonya yang mampu menangkap momen penting."
+                    </p>
+                    <div class="flex text-accent">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Tentang <span class="gradient-text">Saya</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Perkenalan singkat tentang perjalanan karir dan keahlian yang saya miliki
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                <div class="lg:w-1/2">
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-4 text-accent">Perjalanan Kreatif</h3>
+                        <p class="text-gray-300 mb-4">
+                            Saya adalah praktisi media kreatif dengan lebih dari 7 tahun pengalaman di industri kreatif. Perjalanan saya dimulai sebagai desainer grafis lepas sebelum akhirnya mendalami bidang video editing dan fotografi profesional.
+                        </p>
+                        <p class="text-gray-300">
+                            Dengan passion yang membara di dunia visual, saya percaya bahwa setiap proyek adalah kesempatan untuk menciptakan cerita yang bermakna dan berdampak.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-accent">Filosofi Kreatif</h3>
+                        <div class="bg-gray-900 rounded-2xl p-6 border-l-4 border-accent">
+                            <p class="text-gray-300 italic">
+                                "Saya percaya pada kekuatan cerita visual yang otentik dan berdampak, mengutamakan estetika yang bersih dan fungsional dalam setiap karya yang saya ciptakan."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold mb-6 text-accent">Work Process</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div class="process-step relative text-center">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
+                                    <span>1</span>
+                                </div>
+                                <h4 class="font-bold">Diskusi</h4>
+                                <p class="text-gray-400 text-sm mt-2">Memahami konsep dan tujuan</p>
+                            </div>
+                            <div class="process-step relative text-center">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-light flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
+                                    <span>2</span>
+                                </div>
+                                <h4 class="font-bold">Konsep</h4>
+                                <p class="text-gray-400 text-sm mt-2">Merancang rencana eksekusi</p>
+                            </div>
+                            <div class="process-step relative text-center">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
+                                    <span>3</span>
+                                </div>
+                                <h4 class="font-bold">Eksekusi</h4>
+                                <p class="text-gray-400 text-sm mt-2">Produksi & editing</p>
+                            </div>
+                            <div class="process-step relative text-center">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-light to-secondary flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
+                                    <span>4</span>
+                                </div>
+                                <h4 class="font-bold">Finalisasi</h4>
+                                <p class="text-gray-400 text-sm mt-2">Review & hasil sempurna</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-900 rounded-2xl p-8 sticky top-24">
+                        <div class="flex justify-center mb-8">
+                            <div class="relative">
+                                <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-secondary">
+                                    <img src="image/FOTO PROPIL.jpg"
+                                         alt="Profile Photo" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
+                                    <i class="fas fa-camera text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-10">
+                            <h3 class="text-xl font-bold mb-6 text-center text-accent">Keahlian Teknis</h3>
+                            <div class="flex flex-wrap justify-center gap-8">
+                                <div class="text-center">
+                                    <div class="skills-diagram mb-3" style="background: conic-gradient(#F01414 90%, #2d2d2d 0);">
+                                        <i class="fab fa-adobe text-3xl absolute"></i>
+                                    </div>
+                                    <h4 class="font-semibold">Premiere Pro</h4>
+                                    <p class="text-gray-400 text-sm">Expert</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="skills-diagram mb-3" style="background: conic-gradient(#F01414 85%, #2d2d2d 0);">
+                                        <i class="fab fa-adobe text-3xl absolute"></i>
+                                    </div>
+                                    <h4 class="font-semibold">After Effects</h4>
+                                    <p class="text-gray-400 text-sm">Advanced</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="skills-diagram mb-3" style="background: conic-gradient(#F01414 80%, #2d2d2d 0);">
+                                        <i class="fab fa-adobe text-3xl absolute"></i>
+                                    </div>
+                                    <h4 class="font-semibold">Photoshop</h4>
+                                    <p class="text-gray-400 text-sm">Advanced</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold mb-4 text-center text-accent">Keahlian Lain</h3>
+                            <div class="flex flex-wrap justify-center gap-2">
+                                <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Komunikasi Efektif</span>
+                                <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Manajemen Proyek</span>
+                                <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Problem Solving</span>
+                                <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Kreativitas</span>
+                                <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm">Storytelling</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-center text-accent">Pendidikan</h3>
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-dot"></div>
+                                <h4 class="font-bold">Sarjana Desain Komunikasi Visual</h4>
+                                <p class="text-gray-400">Universitas Seni Indonesia (2013-2017)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <h4 class="font-bold">Sertifikasi Adobe Certified Expert</h4>
+                                <p class="text-gray-400">Adobe Creative Cloud (2018)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary to-black">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Mari <span class="text-accent">Berkolaborasi</span></h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Sampaikan ide proyek Anda dan mari kita ciptakan sesuatu yang luar biasa bersama-sama
+                    </p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl">
+                            <form id="contact-form" action="https://formspree.io/f/xeokgqyw" method="POST"  class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-gray-300 mb-2">Nama Lengkap</label>
+                                    <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-gray-300 mb-2">Alamat Email</label>
+                                    <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-gray-300 mb-2">Pesan</label>
+                                    <textarea id="message" name="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn-primary w-full py-3 px-6 rounded-lg font-bold flex items-center justify-center">
+                                    Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
+                                </button>
+                            </form>
+                            
+                            <div id="form-message" class="mt-4 hidden p-4 bg-green-900 text-green-200 rounded-lg">
+                                Terima kasih! Pesan Anda telah terkirim. Saya akan menghubungi Anda segera.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-black bg-opacity-30 rounded-2xl p-8 h-full border border-gray-800">
+                            <div class="mb-10">
+                                <h3 class="text-xl font-bold mb-6 text-accent">Informasi Kontak</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-4">
+                                            <i class="fas fa-envelope text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-400">Email</p>
+                                            <p class="text-white">creativemedia@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-4">
+                                            <i class="fas fa-phone-alt text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-400">Telepon/WhatsApp</p>
+                                            <p class="text-white">+62 877 2698 1031</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-4">
+                                            <i class="fas fa-map-marker-alt text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-400">Lokasi</p>
+                                            <p class="text-white">Surakarta, Indonesia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-bold mb-6 text-accent">Media Sosial</h3>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-light hover:bg-accent transition-colors">
+                                        <i class="fab fa-instagram text-xl"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-light hover:bg-accent transition-colors">
+                                        <i class="fab fa-linkedin-in text-xl"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-light hover:bg-accent transition-colors">
+                                        <i class="fab fa-behance text-xl"></i>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-light hover:bg-accent transition-colors">
+                                        <i class="fab fa-youtube text-xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-12 bg-black border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center mr-3">
+                        <span class="text-white font-bold">CM</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-white">Creative<span class="gradient-text">Media</span></h1>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <p class="text-gray-400">
+                        © 2025 CreativeMedia. Semua Hak Dilindungi.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</html>
